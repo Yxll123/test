@@ -1,0 +1,70 @@
+<view class="dialog {{ isShowFrame ? 'dialog_show' : '' }}">
+  <view class="dialog_mask" catchtap="_closeBuyWin" />
+  <view class="dialog_container">
+
+    <view class="spec-img-container">
+      <image src="{{goods.skuPicture}}"></image>
+      <view class='middle'>
+        <view class='name good-name-one'>
+          {{spuName}}
+          <text class='sku-surplus-view'>剩余{{goods.stock}}件</text>
+        </view>
+        <view class="price">
+          <text class='good-price-icon'>￥</text>
+          <text class='good-price'>{{goods.price}}</text>
+        </view>
+      </view>
+      <icon class="clear" type='clear' catchtap='_closeBuyWin'></icon>
+    </view>
+
+    <!--规格选择区域 -->
+    <!-- <block wx:if="{{goodSpec.length > 0}}"> -->
+    <view class="spec-view-container" wx:for="{{goodsSpec}}" wx:key="spec" wx:for-index="fidx">
+      <view class="modal-de-select">
+        {{item.specName}}
+      </view>
+      <view class="modal-spec">
+        <block wx:for="{{item.item}}" wx:key='specvalue'>
+          <view class="modal-spec-item modal-spec-item-{{item.sltStatus}}" data-fidx="{{fidx}}" data-sidx='{{index}}' catchtap='_selectSpecify'>{{item.specValueName}}</view>
+        </block>
+      </view>
+    </view>
+
+    <view class="spec-view-container" wx:for="{{propertyList}}" wx:key="property" wx:for-index="fidx">
+      <view class="modal-de-select">
+        {{item.propertyName}}
+      </view>
+      <view class="modal-spec">
+        <block wx:for="{{item.item}}" wx:key='specvalue'>
+          <view class="modal-spec-item modal-spec-item-{{item.sltStatus}}" data-fidx="{{fidx}}" data-sidx='{{index}}' catchtap='_selectProperty'>{{item.propertyValueName}}</view>
+        </block>
+      </view>
+    </view>
+
+    <!--选择结束 -->
+    <view class="buy-num">
+      <view class="font-num">购买数量：</view>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{buyNum == '1'? 'disabled':''}}" data-flag='reduce' bindtap="_buyNumRoP">-</text>
+        <!-- 数值 -->
+        <input type="number" bindblur="_buyNumChange" value="{{buyNum}}" maxlength='3' />
+        <!-- 加号 -->
+        <text class="normal" data-flag='plus' bindtap="_buyNumRoP">+</text>
+      </view>
+    </view>
+    <view class="modal-button-two">
+      <block wx:if="{{frameType == 0}}">
+        <view class="modal-type- global-add-cart" bindtap='_addShopCart'>加入购物车</view>
+        <view class="modal-type- global-immediate-buy" bindtap='_immediateBuy'>立即购买</view>
+      </block>
+      <block wx:elif="{{frameType == 1}}">
+        <view class="modal-type-0 global-add-cart" bindtap='_addShopCart'>加入购物车</view>
+      </block>
+      <block wx:elif="{{frameType == 2}}">
+        <view class="modal-type-0 global-immediate-buy" bindtap='_immediateBuy'>立即购买</view>
+      </block>
+    </view>
+
+  </view>
+</view>

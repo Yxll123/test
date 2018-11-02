@@ -1,0 +1,43 @@
+<view wx:if="{{isAuthorized}}" class="addressForm">
+  <form bindsubmit="submitAddressInfo">
+    <view class="input_box">
+      <view class="input_title">收货人</view>
+      <view class="input_detail">
+        <input name="name" type="text" value="{{name}}" placeholder="请输入收货人姓名" maxlength="20"></input>
+      </view>
+    </view>
+    <view class="input_box">
+      <view class="input_title">联系电话</view>
+      <view class="input_detail">
+        <input name="telephone" type="number" value="{{telephone}}" placeholder="请输入收货人联系电话" maxlength="11"></input>
+      </view>
+    </view>
+    <view class="input_box">
+      <view class="input_title">收货地址</view>
+      <view class="input_detail" bindtap='chooseAddress'>
+        <input name="detail" type="text" disabled='true' value="{{address.detail}}" placeholder="选择收货地址" maxlength="100"></input>
+        <image class="public-right-arrow-icon" src="/images/icons/arrow_right@3x.png"></image>
+      </view>
+    </view>
+
+    <view class="input_box">
+      <view class="input_title">详细地址</view>
+      <view class="input_detail">
+        <input name="doorNumber" type="text" value="{{doorNumber}}" placeholder="请输入楼号/门牌信息" maxlength="100"></input>
+      </view>
+    </view>
+    <view hidden="true">
+      <input name="id" type="text" value="{{id}}"></input>
+    </view>
+    <view class="button_submit">
+      <button form-type="submit" class="button">保存</button>
+    </view>
+  </form>
+</view>
+
+<view wx:else>
+  <view class="unAuthorizedView">
+    <image src="/images/icons/ik_loc_none@3x.png"></image>
+    <button open-type="openSetting" bindopensetting="settingCallback">去授权</button>
+  </view>
+</view>

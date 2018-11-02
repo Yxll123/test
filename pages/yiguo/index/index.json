@@ -1,0 +1,6 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "spec-slt-frame": "../../component/spec-slt-frame/spec-slt-frame"
+    }
+}

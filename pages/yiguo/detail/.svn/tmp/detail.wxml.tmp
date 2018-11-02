@@ -1,0 +1,128 @@
+<view>
+<swiper id="top" class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for='{{goodDetailBanner}}' wx:key='detailPics'>
+    <swiper-item>
+      <image class='slide-image' src="{{item.imageUrl}}" data-img-Index='{{index}}' bindtap='previewImg'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--仿淘宝视频与商品主图切换样式-->
+<!-- <view class="videoDemo" wx:if="{{playVideo}}">
+  <video src="https://aibinong.cn/001.mp4" controls autoplay='true' id="goodsVideo" bindended="videoEndShowImage">
+  </video>
+</view>
+<view wx:else>
+  <view class="goodsBigImage">
+    <image src="{{bigImageUrl}}"></image>
+  </view>
+  <view class="playMenu">
+    <image src="/images/icons/play_menu.png" bindtap="playVideo"></image>
+  </view>
+</view>
+
+<view class="goodsPics">
+  <block wx:for="{{goodDetailBanner}}" wx:key='detailPics'>
+    <image class="goodsImage-{{item.delFlag}}" src="{{item.imageUrl}}" bindtap="openImage" data-imageurl="{{item.imageUrl}}" data-index="{{index}}"></image>
+  </block>
+</view> -->
+
+<view class='good-detail-title'>
+  <text class='textContent'>{{goodDetail.spuName}}</text>
+
+  <!-- 满减优惠 -->
+  <view class='all-full-cut'>
+    <view class='full-cut' wx:for='{{act}}' wx:key='2'>{{item}}</view>
+  </view>
+
+  <view class='title-price'>
+    <text class='textSymbol'>{{priceIcon}}</text>
+    <text class='textContent'>{{goodDetail.skuShopPrice}}</text>
+  </view>
+  <view class='title-orginal-price' wx:if="{{isActivity == '1'}}">
+    {{priceIcon}}{{goodDetail.skuMarketPrice}}
+  </view>
+  <text style='border-top: 2rpx solid #eee;line-height:70rpx;' class='textGray'>运费：{{goodTransFee}}</text>
+</view>
+
+<view class="videoDemo2" style="display:{{chooseModal=='none' ? 'block':'none'}}">
+  <video src="https://aibinong.cn/001.mp4" controls poster="https://aibinong.cn/default.png">
+  </video>
+</view>
+<view class="videoImage" style="display:{{chooseModal=='block' ? 'flex':'none'}}">
+  <image src="https://aibinong.cn/default.png"></image>
+</view>
+
+<view class='good-detail-pic-list' style='display:flex;flex-direction:column;justify-content:space-between;margin-top:20rpx;'>
+  <block wx:for='{{goodIntroduceList}}' wx:key='picShow'>
+    <image style='width:750rpx;vertical-align:top;' mode='widthFix' src='{{item.imageUrl}}'></image>
+  </block>
+</view>
+
+<!-- </scroll-view> -->
+<!-- </view> -->
+<view>
+  <cover-view class='page-footer-first'></cover-view>
+  <cover-view class="page-footer-second">
+    <cover-view class="detail-cart" bindtap='jumpCartPage'>
+      <cover-image src='../../../images/icons/ic_cart.png'></cover-image>
+      <cover-view style='color:#ccc;font-size:24rpx;'>购物车</cover-view>
+    </cover-view>
+    <cover-view class="detail-add-cart global-add-cart" data-open-Type='addcart' bindtap='showBuy'>
+      <cover-view class=''>加入购物车</cover-view>
+    </cover-view>
+    <cover-view class="detail-buy global-immediate-buy" data-open-Type='buy' bindtap='showBuy'>
+      <cover-view class=''>立即购买</cover-view>
+    </cover-view>
+  </cover-view>
+</view>
+
+
+
+<!--属性规格选择栏-->
+<view class='mask' style="display:{{chooseModal}}" bindtap='closeBuy'></view>
+<view class='mask2' style="display:{{chooseModal}}">
+  <view class='choose'>
+    <view class="spec-img-container">
+      <image src="{{goodDetail.imgUrl}}"></image>
+      <view class='middle'>
+        <view class='name good-name-one'>{{goodDetail.spuName}}</view>
+        <view class="price"><text class='good-price-icon'>{{priceIcon}}</text><text class='good-price'>{{goodDetail.skuShopPrice}}</text></view>
+      </view>
+      <icon class="clear" type='clear' catchtap='closeBuy'></icon>
+    </view>
+    <!--选择开始 -->
+    <view class="spec-view-container" wx:if="{{goodSpecify.length > 0}}">
+      <view class="modal-de-select">商品规格：</view>
+      <view class="modal-spec">
+        <ul>
+          <block wx:for="{{goodSpecify}}" wx:key='2'>
+            <li>
+              <view class="modal-spec-item-{{item.isSelect? 'selected':'' }}" data-sku-Id='{{item.id}}' data-arr-Index='{{index}}' catchtap='selectSpecify'>{{item.skuName}}</view>
+            </li>
+          </block>
+        </ul>
+      </view>
+    </view>
+    <!--选择结束 -->
+    <view class="buy-num">
+      <view class="font-num">购买数量：</view>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" data-flag='reduce' bindtap="buyNumRoP">-</text>
+        <!-- 数值 -->
+        <input type="number" bindblur="buyNumChange" value="{{buyNum}}" maxlength='3' />
+        <!-- 加号 -->
+        <text class="normal" data-flag='plus' bindtap="buyNumRoP">+</text>
+      </view>
+    </view>
+
+
+    <cover-view class="modal-button-two">
+      <cover-view class="modal-type-{{cartLabType}} global-add-cart" bindtap='addShopCart' data-sku-id='{{goodDetail.id}}'>加入购物车</cover-view>
+      <cover-view class="modal-type-{{buyLabType}} global-immediate-buy" bindtap='immediateBuy' data-sku-id='{{goodDetail.id}}'>立即购买</cover-view>
+    </cover-view>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,53 @@
+<swiper id="top" class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <view data-spu-Id='{{item.linkSpuId}}' bindtap='goodDetail' wx:for="{{bannerList}}" wx:key="index">
+    <swiper-item>
+      <image class="slide-image" src="{{item.imageUrl}}" />
+    </swiper-item>
+  </view>
+</swiper>
+
+<view class='home-modules'>
+  <block wx:for="{{funModules}}" wx:key="funModules">
+    <view class='sub-module' bindtap='moduleDetail' data-idx='{{index}}' >
+      <image class='sub-module-image' src='{{item.categoryImageUrl}}'></image>
+      <view class='sub-module-name'>{{item.name}}</view>
+    </view>
+  </block>
+</view>
+
+<!-- <block wx:if="{{isSpecialPriceAct == '0'}}"> -->
+<view class='hot-container'>
+  <view class='hot-goods-title'>
+    <text class='line'></text>
+    <text class='txt'>热卖商品</text>
+    <text class='line'></text>
+  </view>
+  <block wx:for='{{hotGoods}}' wx:key='1'>
+    <view class='good' data-spu-Id='{{item.id}}' bindtap='goodDetail'>
+      <image class='good-img' src='{{item.pictureUrl}}'></image>
+      <view class='good-info'>
+        <view class='top'>
+          <text class='good-name'>{{item.name}}</text>
+        </view>
+
+        <view class='bottom'>
+          <view class='good-current-price'>
+            <text class='good-price-icon'>{{priceIcon}}</text>
+            <text class='good-price'>{{item.basePrice}}</text>
+          </view>
+          <image class='good-add' src='../../../images/icons/btn_add.png' data-good-Idx='{{index}}' catchtap='showBuyWin'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="footer">
+  <view>
+    <text>--------没有更多了--------</text>
+  </view>
+</view>
+
+<!-- 商品规格弹窗 -->
+<spec-slt-frame id="specSltFrame" frameType='0' spuId="{{goodsInfo.id}}" spuName="{{goodsInfo.name}}" goodsDesc="{{goodsInfo.goodsDesc}}" isLimitArea="{{goodsInfo.isLimitArea}}">
+</spec-slt-frame>

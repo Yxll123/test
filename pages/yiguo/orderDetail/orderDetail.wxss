@@ -1,0 +1,225 @@
+/* .address_box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+  border-bottom: 10rpx solid #ededed;
+}
+.address-icon image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.address-content {
+  font-size: 32rpx;
+  margin-right: 20rpx;
+} */
+.head-address-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+
+/* .address-icon {
+
+} */
+
+.icon-img {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.address-content {
+  flex: 1;
+  /* margin-left: 20rpx; */
+  margin-right: 20rpx;
+}
+
+.address-content .detail {
+  margin-top: 20rpx;
+}
+.head-address-icon {
+  height: 10rpx;
+  width: 100%;
+}
+.consigneeNameAndPhone {
+  display: flex;
+  justify-content: space-between
+}
+.consigneeAddress {
+  margin-top: 20rpx;
+}
+
+.goodslist_box {
+  background-color: #fff;
+  border-bottom: 10rpx solid #ededed
+}
+.order_firstline {
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  border-bottom: 5rpx solid #ededed;
+  display: flex;
+}
+.order_time {
+  line-height: 60rpx;
+  width: 580rpx;
+}
+.order_status {
+  line-height: 60rpx;
+  color: #FF4400
+}
+.list_good {
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-right: 30rpx;
+  display: flex;
+  border-bottom: 5rpx solid #ededed
+}
+.goods_image image {
+  width: 160rpx;
+  height: 160rpx;
+} 
+.goods_info {
+  width: 510rpx;
+  margin-left: 20rpx
+}
+
+.goods_name {
+  height: 140rpx;
+}
+.goods_spuName {
+  font-size: 32rpx;
+}
+.goods_skuName {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #7F7F7F
+}
+.goods_priceAndAmount {
+  color: #FF4400;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between
+}
+.orderPrice {
+  font-size: 32rpx;
+  padding-right: 30rpx;
+  padding-left: 30rpx;
+  padding-top: 10rpx;
+}
+.orderPrice_line {
+  padding-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between
+}
+.order_attachInfo {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 10rpx;
+  border-bottom: 10rpx solid #ededed;
+}
+.attachInfo_line {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  padding-right: 40rpx;
+  border-bottom: 5rpx solid #ededed;
+}
+.attachInfo_title {
+  font-size: 34rpx;
+}
+.attachInfo_content {
+  font-size: 30rpx;
+  text-align: center
+}
+.attatch_comment {
+  padding-top: 21rpx;
+  padding-bottom: 21rpx;
+  padding-left: 30rpx;
+  padding-right: 40rpx;
+  align-items: center;
+  display: flex;
+}
+.attatch_comment_title {
+  width: 160rpx;
+  height: auto;
+  font-size: 34rpx;
+}
+.attatch_comment_content {
+  width: 510rpx;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  text-align: right;
+}
+
+.otherInfo_box {
+  font-size: 28rpx;
+  border-bottom: 10rpx solid #ededed;
+  background-color: #fff;
+}
+.orderid {
+  padding: 20rpx 20rpx 10rpx 30rpx;
+}
+.creatdate {
+  padding: 10rpx 20rpx 20rpx 30rpx;
+}
+.operate_button {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex
+}
+.navigator_button {
+  margin-top: 15rpx;
+  margin-left: 550rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  width: 160rpx;
+  background-color: #D32323;
+  color: #fff;
+  border-radius: 10rpx;
+  border: 2rpx solid #D32323; 
+  text-align: center;
+  line-height: 60rpx;
+}
+.navigator_button1 {
+  margin-top: 15rpx;
+  margin-left: 350rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  width: 160rpx;
+  background-color:  #F67A7A;
+  color: #fff;
+  border-radius: 10rpx;
+  border: 2rpx solid #F67A7A; 
+  text-align: center;
+  line-height: 60rpx;
+}
+.navigator_button2 {
+  margin-top: 15rpx;
+  margin-left: 40rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+  width: 160rpx;
+  background-color: #495A7B;
+  color: #fff;
+  border-radius: 10rpx;
+  border: 2rpx solid #495A7B; 
+  text-align: center;
+  line-height: 60rpx;
+}

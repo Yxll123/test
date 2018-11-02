@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "modal-food": "../../component/modal-food/modal-food"
+  }
+}

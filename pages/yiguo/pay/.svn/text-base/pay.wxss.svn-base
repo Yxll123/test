@@ -1,0 +1,112 @@
+.head-address-one {
+  height: 100rpx;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.head-address-icon {
+  height: 10rpx;
+  width: 100%;
+}
+
+.head-address-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+
+/* .address-icon {
+
+} */
+
+.icon-img {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.address-content {
+  flex: 1;
+  /* margin-left: 20rpx; */
+  margin-right: 20rpx;
+}
+
+.address-content .detail {
+  margin-top: 20rpx;
+}
+
+.middle-goods-list {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.list-good {
+  /* box-sizing:border-box; */
+  margin-left: 30rpx;
+  width: auto;
+}
+
+.middle-other {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.middle-other .transport-type {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.transport-type .type-content {
+  flex: 1;
+  padding-right: 40rpx;
+  text-align: right;
+}
+
+.middle-other .bill-style {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.style-select {
+  flex: 1;
+  padding-right: 40rpx;
+  text-align: right;
+}
+
+.middle-other .buyer-message {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.message-content {
+  flex: 1;
+  padding-left: 20rpx;
+  padding-right: 40rpx;
+  text-align: right;
+}

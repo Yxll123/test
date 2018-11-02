@@ -1,0 +1,22 @@
+.left-classify {
+  height: 100%;
+  width: 180rpx;
+}
+
+.single-classify {
+  font-size: 30rpx;
+  color: #000;
+  background-color: #eee;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.single-classify-slt {
+  font-size: 30rpx;
+  color: #f00;
+  background-color: #fff;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}

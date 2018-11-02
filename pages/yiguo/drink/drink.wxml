@@ -1,0 +1,48 @@
+<import src="../../../template/left-classify/left-classify.wxml" />
+
+<view class='container'>
+  <view class='drink-shop-top-view'>
+    <image class="drink-shop-image" src=''></image>
+    <view class='shop-detail-view'>
+      <text>公告：欢迎点单</text>
+      <text>地址：XXXXXXXX</text>
+    </view>
+  </view>
+  <view class='shop-goods-view'>
+    <view class='left-classify'>
+      <scroll-view scroll-y='true' style='height:100%;width:100%'>
+        <view wx:for='{{classify}}' wx:key='left-classify' class="single-classify single-classify{{index == currentViewIdx ? '-slt':'-none'}}" id='{{index}}' data-idx='{{index}}' bindtap='chooseCat'>{{item.name}}</view>
+      </scroll-view>
+    </view>
+
+    <view class='right-classify'>
+      <scroll-view scroll-y='true' style='height:483px; width:100%;' scroll-into-view="view_{{scrollIntoView}}" scroll-with-animation='true' bindscroll="bindscroll">
+        <block wx:for="{{classify}}" wx:key="f" wx:for-index="fidx">
+          <view class='classify-goods-view' id='view_{{fidx}}'>
+            <view class='classify-name'>{{item.name}}</view>
+            <!-- <view class='goods-list-view'> -->
+            <block wx:for="{{item.goodsItem}}" wx:key='s' wx:for-index="sidx">
+              <view class='goods-view'>
+                <image class='goods-imageUrl' src='{{item.imageUrl}}'></image>
+                <!-- <view class='goods-name'>{{item.goodsName}}</view> -->
+                <view class='right-goods-view'>
+                  <view class='goods-name'>{{item.goodsName}}</view>
+                  <view class='goods-extend-info'>醇香奶茶</view>
+                  <view class='goods-price-view'>
+                    <view class='goods-price'></view>
+                    <view class='buy-view' catchtap='showModalFood'>选规格</view> <!-- 右上角数量上标 -->
+                    <!-- 或者 + ，加入购物车后需要展示减号和数量-->
+                  </view>
+                </view>
+              </view>
+            </block>
+            <!-- </view> -->
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<modal-food id="modalFood" spuId="0001" spuName="草莓奶茶">
+</modal-food>

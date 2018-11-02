@@ -1,0 +1,10 @@
+<!-- <view class='about_box'>
+  <view class="about_title">福中酒业食品有限公司</view>
+  <view class="about_detail">“施于人”由福中集团旗下福中酒业食品有限公司精心打造，秉持“健康生活，从饮食开始”的理念，甄选精品。目前联袂苏酒集团，销售旗下亚麻麻油、亚麻籽油、百草素酵素、洋河梦之蓝手工班52度等产品为主。</view>
+</view> -->
+<view class="logoImage">
+  <image src="/images/icons/aibinong_logo.png"></image>
+</view>
+<view class="introduction">
+  <text class="word">爱必浓家居是一家专注为创意家居提供综合解决方案的服务供应商，过去6年，爱必浓家居抓住中国金融机构增值业务转型的机遇，坚持以客户为中心，基于客户满意持续服务创新，精耕渠道，在品牌资源保证的同时，利用金融渠道大数据支持、宣传资源优势，对客户进行精准营销，赢得了客户的尊重和信赖，稳健成长为年销售规模近1.2万亿人民币的综合业务服务供应商。</text>
+</view>

@@ -1,0 +1,617 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: 100%;
+}
+
+page {
+  height: 100%;
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background-color: #eee;
+}
+
+.textSymbol {
+  font-family: Arial;
+  color: #f40;
+  font-size: 28rpx;
+  /* font-weight: 600; */
+}
+
+.textContent {
+  /* font-family: 宋体; *//* font-weight: 600; */
+  font-size: 36rpx;
+}
+
+.textGray {
+  color: #aaa;
+  font-size: 30rpx;
+}
+
+.address-content-one {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.address-content-two {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.all-full-cut {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.full-cut {
+  font-size: 22rpx;
+  color: #ea3838;
+  /* border:#EA3838 2rpx solid; *//* height: 36rpx; *//* line-height: 36rpx; */
+  text-align: center;
+  /* width: 116rpx; */
+  border-radius: 4rpx;
+  margin-right: 8rpx;
+  background-color: #fff5f5;
+}
+
+/* 商品名 */
+
+.good-name {
+  /* font-family: 宋体; */
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.good-name-one {
+  /* font-family: 宋体; */
+  font-size: 30rpx;
+}
+
+/* 商品价格 */
+
+.good-price {
+  font-size: 36rpx;
+  color: #f40;
+}
+
+.good-price-icon {
+  font-size: 28rpx;
+  color: #f40;
+}
+
+/*整个页面置灰*/
+
+.mask {
+  width: 750rpx;
+  height: 100%;
+  background: #c0c0c0;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  opacity: 0.7;
+}
+
+/*选择规格层面*/
+
+.choose {
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  /* right: 0; *//* border: 1px solid #f44336; */
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.choose .spec-img-container {
+  height: 220rpx;
+  border-bottom: 2px solid #f5f5f5;
+  display: flex;
+  flex-direction: row;
+}
+
+.choose .spec-img-container 
+image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: -32rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  border: 2px #f5f5f5 solid;
+  border-radius: 5px;
+}
+
+.choose .spec-img-container 
+.middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.choose .spec-img-container 
+.name {
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}
+
+.choose .spec-img-container 
+.price {
+  margin-bottom: 20rpx;
+}
+
+.choose .spec-img-container 
+.clear {
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+}
+
+.choose .spec-view-container {
+  width: 100%;
+}
+
+.choose .spec-view-container
+.modal-de-select {
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.choose .spec-view-container
+.modal-spec {
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  min-height: 100rpx;
+}
+
+.choose .spec-view-container
+.modal-spec 
+  ul {
+  width: 100%;
+  height: 100%;
+}
+
+.choose .spec-view-container
+.modal-spec 
+  li {
+  width: 40%;
+  float: left;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.choose .spec-view-container
+.modal-spec-item- {
+  border: 2rpx #00007b solid;
+  color: #00007b;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  width: 80%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.choose .spec-view-container
+.modal-spec-item-selected {
+  color: #fff;
+  border: 2rpx #f00 solid;
+  background-color: #f00;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  width: 80%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.choose .buy-num {
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+.choose .buy-num
+.font-num {
+  margin-left: 20rpx;
+}
+
+/*主容器*/
+
+.stepper {
+  width: 218rpx;
+  height: 62rpx;
+  /*给主容器设一个边框*/
+  border: 2rpx solid #ccc;
+  border-radius: 50rpx;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 60rpx;
+  height: 100%;
+  line-height: 62rpx;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 90rpx;
+  height: 62rpx;
+  float: left;
+  text-align: center;
+  font-size: 32rpx;
+  /*给中间的input设置左右边框即可*/
+  border-left: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*知道从来点击来时候 */
+
+.choose .modal_button {
+  flex-direction: row;
+  background-color: #c62127;
+  position: inherit;
+  bottom: 0;
+  z-index: 100;
+  width: 750rpx;
+  height: 106rpx;
+  line-height: 106rpx;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.choose .modal-button-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* float: left; */
+  background-color: #fff;
+  /* position: inherit; *//* bottom: 0; *//* right: 0; *//* z-index: 10; */
+  width: 100%;
+  /* height: 50px; */
+}
+
+.choose .modal-button-two
+button {
+  border-radius: 0px;
+}
+
+.choose .modal-button-two
+.modal-type- {
+  width: 50%;
+}
+
+.choose .modal-button-two
+.modal-type-0 {
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.choose .modal-button-two
+.modal-type-1 {
+  display: none;
+}
+
+.global-add-cart {
+  background-color: #495a7b;
+  font-size: 32rpx;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+
+.global-immediate-buy {
+  background-color: #f67a7a;
+  font-size: 32rpx;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+
+/*页面底部栏样式*/
+
+/*高度包含整个底部，就不会覆盖页面内容*/
+
+.page-footer-first {
+  height: 100rpx;
+}
+
+.page-footer-second {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  z-index: 99;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 36rpx; */
+}
+
+.footer-page {
+  /* display: flex;
+  flex-direction: row; */
+  border-top: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+  align-items: center;
+}
+
+.page-footer-second .footer-content {
+  flex: 1;
+  /* text-align: center; */
+  margin-left: 20rpx;
+}
+
+.page-footer-second .footer-button {
+  height: 100%;
+  width: 200rpx;
+}
+
+.footer-button .button {
+  background-color: #f67a7a;
+  border-radius: 0rpx;
+  color: #fff;
+  font-size: 36rpx;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-button 
+button {
+  background-color: #f67a7a;
+  border-radius: 0rpx;
+  color: #fff;
+  font-size: 36rpx;
+  height: 100%;
+}
+
+.page-footer-second .detail-cart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 160rpx;
+  align-items: center;
+}
+
+.page-footer-second
+cover-image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.detail-add-cart {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-buy {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*******/
+
+.list-good {
+  height: 200rpx;
+  width: 100%;
+  /* box-sizing:border-box; */
+  border-bottom: 2rpx solid #eef;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.list-good .gond-icon {
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.list-good .good-content {
+  flex: 1;
+  height: 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.good-content .content-pic {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.good-content .good-content-right {
+  height: 100%;
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-good .good-num {
+  height: 100%;
+  width: 60rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.navigator-arrow {
+  padding-right: 23rpx;
+  position: relative;
+}
+
+.navigator-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 20rpx;
+}
+
+.address-content .name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity-view {
+  background: #fff;
+}
+
+.activity-title {
+  height: 70rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eef;
+}
+
+.activity-title .title-left {
+  line-height: 70rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+
+.activity-title .title-right {
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.activity-title .right-name {
+  /* line-height: 60rpx; */
+  font-size: 30rpx;
+  color: #aaa;
+  margin-right: 6rpx;
+}
+
+.activity-title .right-day {
+  height: 45rpx;
+  line-height: 45rpx;
+  padding: 0rpx 4rpx 0rpx 4rpx;
+  margin: 0rpx 6rpx 0rpx 6rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 4rpx 4rpx 4rpx 4rpx;
+}
+
+.activity-title .right-hr {
+  height: 45rpx;
+  line-height: 45rpx;
+  width: 40rpx;
+  text-align: center;
+  padding: 0rpx 4rpx 0rpx 4rpx;
+  margin: 0rpx 6rpx 0rpx 6rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 4rpx 4rpx 4rpx 4rpx;
+}
+
+.activity-title .right-min {
+  height: 45rpx;
+  line-height: 45rpx;
+  width: 40rpx;
+  text-align: center;
+  padding: 0rpx 4rpx 0rpx 4rpx;
+  margin: 0rpx 6rpx 0rpx 6rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 4rpx 4rpx 4rpx 4rpx;
+}
+
+.activity-title .right-sec {
+  height: 45rpx;
+  width: 40rpx;
+  text-align: center;
+  line-height: 45rpx;
+  padding: 0rpx 4rpx 0rpx 4rpx;
+  margin: 0rpx 6rpx 0rpx 6rpx;
+  background-color: #000;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 4rpx 4rpx 4rpx 4rpx;
+}
+
+.bottom-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+.bottom-footer .footer-price {
+  color: #aaa;
+  text-decoration: line-through;
+  display: flex;
+}
+
+.footer-price .original-price-icon {
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.footer-price .original-price {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.bottom-footer .footer-percent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

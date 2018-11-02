@@ -1,0 +1,77 @@
+.wx-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-food-view {
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 600rpx;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.food-title-view {
+  padding-top: 20rpx;
+}
+
+.food-spec-view {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30rpx;
+}
+.spec-name-view {
+  text-align: left;
+  margin-top: 10rpx;
+}
+
+.spec-view {
+  float: left;
+  min-width: 24%;
+  height: 50rpx;
+  margin-top: 16rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+  padding: 0rpx 10rpx;
+
+  border: 2rpx solid #dddee1;
+  font-size: 30rpx;
+}
+
+.footer-view {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0rpx 20rpx;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.clear-icon {
+  position: fixed;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.spec-name-font {
+  font-size: 30rpx;
+}
+
+.spec-ontent-font {
+  font-size: 26rpx;
+}

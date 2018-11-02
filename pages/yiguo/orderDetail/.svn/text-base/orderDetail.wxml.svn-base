@@ -1,0 +1,130 @@
+<!-- <view class='address_box'>
+  <view class='address-icon'>
+    <image src='../../../images/icons/ic_loc.png'></image>
+  </view>
+  <view class='address-content'>
+    <view class='consigneeNameAndPhone'>
+      <text>收货人：{{consigneeName}}</text>
+      <text>{{consigneeMobilePhone}}</text>
+    </view>
+    <view class="consigneeAddress">收货地址：{{consigneeAddress}}</view>
+  </view>
+</view> -->
+
+  <view class='head-address-two'>
+    <view class='address-icon'>
+      <image class='icon-img' src='../../../images/icons/ic_loc.png'></image>
+    </view>
+    <view class='address-content'>
+        <view class='name address-content-one'>
+          <text>收货人：{{consigneeName}}</text>
+          <text>{{consigneeMobilePhone}}</text>
+        </view>
+        <view class='detail address-content-two'>收货地址：{{consigneeAddress}}</view>
+    </view>
+  </view>
+  <view class='head-address-icon'>
+  <image style='height:100%;width:100%;display:block' src='/images/icons/stripe.png'></image>
+</view>
+
+<view class="goodslist_box">
+  <view class="order_firstline">
+    <text class="order_time">下单时间: {{createDate}}</text>
+    <text class="order_status" wx:if="{{orderStatus==-2}}">待付款</text>
+    <text class="order_status" wx:if="{{orderStatus==-1}}">已取消</text>
+    <text class="order_status" wx:if="{{orderStatus==0}}">待发货</text>
+    <text class="order_status" wx:if="{{orderStatus==1}}">待收货</text>
+    <text class="order_status" wx:if="{{orderStatus==2}}">确认收货</text>
+  </view>
+  <view class="list_good" wx:for="{{goodsList}}" wx:for-item="goods" wx:key="index">
+    <view class="goods_image">
+      <image src="{{goods.skuImage}}"></image>
+    </view>
+    <view class="goods_info">
+      <view class="goods_name">
+        <view class='goods_spuName'>{{goods.spuName}}</view>
+      </view>
+      <view class='goods_priceAndAmount'>
+        <text>￥{{goods.skuAmt}}</text>
+        <text>x{{goods.skuCnt}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="orderPrice">
+    <view class="orderPrice_line" wx:if="{{isDiscount}}">
+      <text>商品原价:</text>
+      <text>￥{{totalAmt}}</text>
+    </view>
+    <view class="orderPrice_line" wx:if="{{isDiscount}}">
+      <text>优惠满减:</text>
+      <text>-￥{{discountAmt}}</text>
+    </view>
+    <view class="orderPrice_line">
+      <text>实付金额:</text>
+      <text>￥{{payAmt}}</text>
+    </view>
+  </view>
+</view>
+
+<view class='order_attachInfo'>
+  <view wx:if="{{expressCode && expressType}}" class='attachInfo_line'>
+    <text class='attachInfo_title'>承运物流:</text>
+    <text class='attachInfo_content'>顺丰速运</text>
+  </view>
+  <view wx:if="{{expressCode && expressType}}" class='attachInfo_line'>
+    <text class='attachInfo_title'>快递单号:</text>
+    <text selectable='true' class='attachInfo_content'>{{expressCode}}</text>
+  </view>
+  <view class='attachInfo_line'>
+    <text class='attachInfo_title'>配送方式:</text>
+    <text class='attachInfo_content'>快递 免邮</text>
+  </view>
+    <view class='attachInfo_line'>  
+    <text class='attachInfo_title'>发票抬头:</text>
+    <text class='attachInfo_content' wx:if="{{invoiceType==1}}">个人-{{invoiceName}}</text>
+    <text class='attachInfo_content' wx:elif="{{invoiceType==2}}">公司-{{invoiceName}}</text>
+    <text class='attachInfo_content' wx:else="{{invoiceType==0}}">无</text> 
+  </view>
+  <view class='attatch_comment'>
+    <text class='attatch_comment_title'>买家留言:</text>
+    <text class='attatch_comment_content' wx:if="{{orderRemarks==''}}">无</text>
+    <text class='attatch_comment_content' wx:else>{{orderRemarks}}</text>
+  </view>
+</view>
+
+<view class='page-footer-first'></view>
+
+<view wx:if="{{orderStatus==-2}}" class="operate_button">
+  <!-- <view class="navigator_button1" bindtap="cancelOrder" data-id="{{id}}">
+    取消订单
+  </view> -->
+  <view class="navigator_button" bindtap="gotoPay" data-id="{{id}}">
+    确认付款
+  </view>
+</view>
+<view wx:elif="{{orderStatus==1}}" class="operate_button">
+  <view class="navigator_button" bindtap="confirmReceive" data-id="{{id}}">
+    确认收货
+  </view>
+</view>
+<!-- <view class="otherInfo_box">
+ <view class="orderid">订单编号：{{id}}</view>
+ <view class="creatdate">创建时间：{{createDate}}</view>
+</view> -->
+
+<!--<view>
+  
+  <view class="page-footer-second footer-page">
+    <view class='footer-content'>
+      <text class='textGray'>共</text>
+      <text class='textContent' style='color:#f00;'>{{totalCnt}}</text>
+      <text class='textGray'>件商品</text>
+      <text class='textContent' style='margin-left:20rpx;'>合计：</text>
+      <text class='textSymbol' style='color:#f00;'>￥</text>
+      <text class='textContent' style='color:#f00;'>{{totalAmt}}</text>
+    </view>
+    <view class='footer-button'>
+      <view bindtap='pay' class='button'>确认支付</view>
+    </view>
+  </view>
+</view> -->

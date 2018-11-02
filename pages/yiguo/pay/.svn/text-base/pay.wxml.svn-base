@@ -1,0 +1,93 @@
+<!--pages/yiguo/submit/submit.wxml-->
+ <!-- <block wx:if='{{address==null}}'>
+  <view class='head-address-one'>
+    <view class='address-icon'>+</view>
+    <text class='textContent'>创建收货地址</text>
+  </view>
+</block>
+<block wx:else>  -->
+  <view class='head-address-two'>
+    <view class='address-icon'>
+      <image class='icon-img' src='../../../images/icons/ic_loc.png'></image>
+    </view>
+    <view class='address-content'>
+        <view class='name address-content-one'>
+          <text>收货人：{{address.name}}</text>
+          <text>{{address.telephone}}</text>
+        </view>
+        <view class='detail address-content-two'>收货地址：{{address.detail}}</view>
+    </view>
+    <!-- <view class='address-icon'>
+      <view class="navigator-arrow"></view>
+    </view> -->
+  </view>
+ <!-- </block>  -->
+
+<view class='head-address-icon'>
+  <image style='height:100%;width:100%;display:block' src='/images/icons/stripe.png'></image>
+</view>
+
+<view class='middle-goods-list'>
+  <blcok wx:for='{{orderGoodsList}}' wx:key='order'>
+    <view class='list-good'>
+      <view class='good-content'>
+        <image class='content-pic' src='{{item.skuImage}}'></image>
+        <view class='good-content-right'>
+          <view>
+            <text class='content-name good-name-one'>{{item.spuName}}</text>
+            <!-- <text class='content-spu textGray'>
+            {{item.skuName}}
+            </text> -->
+          </view>
+          <view class='content-sum textContent' style='color:#f00;'>
+            <text class='good-price-icon'>￥</text><text class='good-price'>{{item.skuAmt}}</text>
+          </view>
+
+        </view>
+      </view>
+      <view class='good-num textGray'>x{{item.skuCnt}}</view>
+    </view>
+  </blcok>
+</view>
+
+<view class='middle-other'>
+  <view class='transport-type textContent'>
+    <text class='textContent'>配送方式</text>
+    <text class='type-content textGray'>快递 免邮</text>
+    <!-- <view class="navigator-arrow"></view> -->
+  </view>
+
+  <view class='bill-style textContent'>
+    <text class='textContent'>发票抬头</text>
+    <text class='textGray' style='margin-right:40rpx;'>{{invoice.itype}}{{invoice.name!='' ? '-':''}}{{invoice.name}}</text>
+    <!-- <view class="navigator-arrow"></view> -->
+  </view>
+
+  <view class='buyer-message textContent'>
+    <text class='textContent'>买家留言</text>
+    <input class='message-content textGray' disabled='true' value="{{buyerMessage == '' ? '无':buyerMessage}}"></input>  
+  </view>
+
+</view>
+
+<view>
+  <view class='page-footer-first'></view>
+  <view class="page-footer-second footer-page">
+    <view class='footer-content'>
+      <view>
+        <text class='textContent'>合计：</text>
+        <text class='good-price-icon'>￥</text>
+
+        <wxs module="filters" src="../../../filters.wxs"></wxs>
+        <text class='good-price'>{{filters.toFix(lastMoney, 2)}}</text>
+      </view>
+      <view class='footer-content-activity'>
+        <text class='textGray'>总额 ￥{{filters.toFix(totalMoney, 2)}}</text>
+        <text class='textGray'  wx:if="{{isActivity == '1'}}">,  立减 ￥{{filters.toFix(preMoney, 2)}}</text>
+      </view>
+    </view>
+    <view class='footer-button'>
+      <view bindtap='pay' class='button'>确认支付</view>
+    </view>
+  </view>
+</view>

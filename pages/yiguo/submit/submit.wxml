@@ -1,0 +1,93 @@
+<!--pages/yiguo/submit/submit.wxml-->
+<navigator url="/pages/yiguo/addressList/addressList?flag=true" hover-class="navigator-hover">
+  <block wx:if='{{address.id == ""}}'>
+    <view class='head-address-one'>
+      <!-- <view class='address-icon'>+</view> -->
+      <image class='address-icon-add' src='/images/icons/ic_add.png'></image>
+      <text class='textContent'>创建收货地址</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='head-address-two'>
+      <view class='address-icon'>
+        <image class='icon-img' src='../../../images/icons/ic_loc.png'></image>
+      </view>
+      <view class='address-content'>
+        <view class='name address-content-one'>
+          <text>收货人：{{address.name}}</text>
+          <text>{{address.telephone}}</text>
+        </view>
+        <view class='detail address-content-two'>收货地址：{{address.detail}}</view>
+      </view>
+      <view class='address-icon'>
+        <view class="navigator-arrow"></view>
+      </view>
+    </view>
+  </block>
+</navigator>
+
+<view class='head-address-icon'>
+  <image style='height:100%;width:100%;display:block' src='/images/icons/stripe.png'></image>
+</view>
+
+<view class='middle-goods-list'>
+  <blcok wx:for='{{orderGoodsList}}' wx:key='order'>
+    <view class='list-good'>
+      <view class='good-content'>
+        <image class='content-pic' src='{{item.skuPicture}}'></image>
+        <view class='good-content-right'>
+          <view>
+            <text class='content-name good-name-one'>{{item.name}}</text>
+            <text class='content-spu textGray'>
+            {{item.propertyValueGroup}}
+            </text>
+          </view>
+          <view class='content-sum textContent'>
+            <text class='good-price-icon'>￥</text><text class='good-price'>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='good-num textGray'>x{{item.goodsCnt}}</view>
+    </view>
+  </blcok>
+</view>
+
+<view class='middle-other'>
+  <view class='transport-type textContent'>
+    <text class='textContent'>配送方式</text>
+    <text class='type-content'>快递 免邮</text>
+    <view class="navigator-arrow"></view>
+  </view>
+
+  <view class='bill-style textContent' bindtap='invoiceChange'>
+    <text>发票抬头</text>
+    <text class='style-select'>{{invoice.itype}}{{invoice.name!='' ? '-':''}}{{invoice.name}}</text>
+    <view class="navigator-arrow"></view>
+  </view>
+
+  <view class='buyer-message textContent'>
+    <text>买家留言</text>
+    <input class='message-content textGray' style='font-weight:500;' maxlength='50' placeholder='请输入留言内容(50个字以内)' bindblur="buyerInput"></input>
+  </view>
+
+</view>
+
+<view>
+  <view class='page-footer-first'></view>
+  <view class="page-footer-second footer-page">
+    <view class='footer-content'>
+      <view>
+        <text class='textContent'>合计：</text>
+        <text class='good-price-icon'>￥</text>
+
+        <text class='good-price'>{{totalMoney}}</text>
+      </view>
+      <!-- <view class='footer-content-activity'>
+        <text class='textContent'>总额 ￥{{totalMoney}}</text>
+      </view> -->
+    </view>
+    <view class='footer-button'>
+      <view bindtap='submitOrder' class='button'>提交订单</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class='invoice'>
+  <text class='textGray'>发票信息</text>
+  <view class='invoice-frames'>
+    <block wx:for='{{invoiceType}}' wx:key='in'>
+      <view class='frame-{{item.selected}}' data-type-Idx='{{index}}' bindtap='selectType'>{{item.name}}</view>
+    </block>
+  </view>
+
+  <block wx:for='{{invoiceType}}' wx:key='input'>
+    <block wx:if='{{item.selected}}'>
+      <block wx:if="{{index != 0}}">
+        <input class='invoice-input' type='text' placeholder='发票抬头' value='{{invoice.name}}' bindinput="inputName"></input>
+      </block>
+      <block wx:if="{{index == 2}}">
+        <input class='invoice-input' type='text' placeholder='纳税人识别号' value='{{invoice.no}}' bindinput="inputNo"></input>
+      </block>
+    </block>
+  </block>
+
+  <view class='confirm' bindtap='confirm'>确认</view>
+</view>
+

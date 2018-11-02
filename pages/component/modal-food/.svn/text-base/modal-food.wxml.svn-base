@@ -1,0 +1,28 @@
+<view class='modal-food-container' hidden="{{!isShow}}">
+  <view class='wx-mask' catchtap='_modalShow'></view>
+  <view class='modal-food-view'>
+    <icon size='24' class='clear-icon' type='clear' catchtap='_modalShow'></icon>
+
+    <view class='food-title-view'>{{spuName}}</view>
+    <view class='food-spec-view'>
+      <block wx:for="{{specList}}" wx:key="spectype" wx:for-index="firstIdx">
+        <view class='spec-name-view spec-name-font'>{{item.specName}}</view>
+        <view class='spec-list-view'>
+          <block wx:for="{{item.item}}" wx:key="speclist" wx:for-index="secIdx">
+            <view class='spec-view' data-fIdx='{{firstIdx}}' data-sIdx="{{secIdx}}">{{item.name}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+
+    <view class='footer-view'>
+      <view class='footer-left'>
+        <text>￥18</text>
+        <text>(热,无糖)</text>
+      </view>
+      <view class='footer-right'>
+       加入购物车
+      </view>
+    </view>
+  </view>
+</view>

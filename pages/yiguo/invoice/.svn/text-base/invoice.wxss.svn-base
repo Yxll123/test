@@ -1,0 +1,60 @@
+.invoice {
+  background-color: #fff;
+   /* width: 100%;  */
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.invoice-frames {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.frame-false {
+  border: 2rpx solid #ccc;
+  color: #000000;
+  font-size: 32rpx;
+  width:180rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center; 
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.frame-true {
+  border: 2rpx solid #F67A7A;
+  color: #F67A7A;
+  font-size: 32rpx;
+  width:180rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center; 
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.invoice-input {
+  background-color: #eee;
+  color: #000000;
+  font-size: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+  /* margin-right: 20rpx; */
+  padding-left: 20rpx;
+}
+
+.confirm {
+  background-color: #F67A7A;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+}

@@ -1,0 +1,98 @@
+<view class="mine-box">
+  <!-- <import src="/template/signin.wxml" />
+  <template is="signin" data="{{...item}}" /> -->
+
+  <!-- <view class="info">
+    <view class="info-icon">
+      <image src="{{userInfo.avatarUrl}}" wx:if="{{userInfo.avatarUrl}}"></image>
+      <image src="/images/icons/default.png" wx:else></image>
+    </view>
+    <view class="info-name">{{userInfo.nickName}}</view>
+  </view> -->
+  <!-- <view>
+    <view class="headView">
+      <open-data class="icon" mode="aspectFit" type="userAvatarUrl"></open-data>
+      <view class="icon" />
+    </view>
+    <view class="nickname">
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view> -->
+  
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+    <open-data type="userNickName"></open-data>
+</view>
+  
+
+  <view class="navigator-box">
+    <navigator class="navigator" url="../orderList/orderList">
+      <view class="navigator-text">我的订单</view>
+      <view class="navigator-text2">查看全部订单</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+
+  <view class='menueview'>
+    <block wx:for="{{mine_list}}" wx:for-index="index" wx:for-ietm="item" wx:key="{{item.status}}">
+      <view class="menue-1" bindtap="navigatorToOrder" data-status="{{item.status}}">
+        <view class="menueimg">
+          <image src="{{item.pic_url}}" class="menue-image" />
+          <block wx:if="{{item.number > 0}}">
+            <view class="menue-tips">{{item.number}}</view>
+          </block>
+        </view>
+        <view class="menuetext">{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="navigator-box">
+    <navigator class="navigator" url="../addressList/addressList">
+      <image src="/images/icons/ic_loc_3x.png" class="navigator_icon"></image>
+      <view class="navigator-text">收货地址</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+  <view class="navigator-box">
+    <navigator class="navigator" url="../aboutMe/aboutMe">
+      <image src="/images/icons/ic_about.png" class="navigator_icon"></image>
+      <view class="navigator-text">关于平台</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view>
+  <view class="contact-service" bindtap="makePhoneCall">
+    <image src="/images/icons/ic_connect.png" class="navigator_icon"></image>
+    <view class="contact-service-text">联系客服</view>
+  </view>
+   <!-- <view class="navigator-box">
+    <navigator class="navigator" url="../vipArea/vipArea">
+      <image src="/images/icons/ic_about.png" class="navigator_icon"></image>
+      <view class="navigator-text">VIP专区</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+  </view> -->
+  <!--
+  <view class="foot-text">
+    <text>南京恩赛信息科技</text>
+    <text>为您打造属于自己的新零售</text>
+  </view>-->
+  <!-- <view class="btn">
+    <ul>
+      <block wx:for="{{mine_list}}" wx:for-item="mine" wx:key="index">
+        <li>
+          <image src="{{mine.pic_url}}"></image>
+          <span>{{mine.title}}</span>
+        </li>
+      </block>
+    </ul>
+  </view> -->
+
+  <!-- <view class="footer">
+    <button type="warn" bindtap="quit"> 退出登录</button>
+  </view> -->
+
+
+</view>

@@ -1,0 +1,7 @@
+<template name="leftClassify">
+  <view class='left-classify'>
+    <scroll-view scroll-y='true' style='height:100%;width:100%'>
+      <view wx:for='{{classify}}' wx:key='left-classify' class="single-classify{{index == currentViewIdx ? '-slt':''}}" id='{{index}}' data-idx='{{index}}' bindtap='chooseCat'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+</template>

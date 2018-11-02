@@ -1,0 +1,156 @@
+.head-address-one {
+  height: 100rpx;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.head-address-icon {
+  height: 10rpx;
+  width: 100%;
+}
+
+.head-address-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx 20rpx 20rpx 0rpx;
+  background-color: #fff;
+}
+
+ .address-icon-add {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 20rpx;
+} 
+
+.icon-img {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.address-content {
+  flex: 1;
+  /* margin-left: 20rpx; */
+  margin-right: 20rpx;
+}
+
+.address-content .detail {
+  margin-top: 20rpx;
+}
+
+.middle-goods-list {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+
+.list-good {
+  height: 200rpx;
+  /* box-sizing:border-box; */
+  border-bottom: 2rpx solid #eef;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.list-good .gond-icon {
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.list-good .good-content {
+  flex: 1;
+  height: 100%;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.good-content .content-pic {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.good-content .good-content-right {
+  height: 100%;
+  flex: 1;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-good .good-num {
+  height: 100%;
+  width: 60rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+
+.middle-other {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.middle-other .transport-type {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.transport-type .type-content {
+  flex: 1;
+  padding-right: 40rpx;
+  text-align: right;
+}
+
+.middle-other .bill-style {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.style-select {
+  flex: 1;
+  padding-right: 40rpx;
+  text-align: right;
+}
+
+.middle-other .buyer-message {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-bottom: 2rpx solid #eef;
+}
+
+.message-content {
+  flex: 1;
+  padding-left: 20rpx;
+}

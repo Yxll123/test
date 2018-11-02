@@ -1,0 +1,84 @@
+<view class="banner_image">
+  <image src="/images/icons/vip_top.jpg"></image>
+</view>
+<!-- <view class="checkVIP_box">
+  <image src="/images/icons/ic_edit@3x.png" class="checkVIP_image"></image>
+  <view class="checkVIP_text">赶紧去验证自己是否是VIP用户吧！</view>
+  <view>
+    <button class="getPhoneNumber_box" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">去验证</button> 
+  </view>
+</view> -->
+<view class='hot-container'>
+  <block wx:for='{{hotGoods}}' wx:key='1'>
+    <view class='good' data-spu-Id='{{item.spuId}}' data-sku-Id='{{item.id}}' bindtap='goodDetail'>
+      <image class='good-img' src='{{item.imgUrl}}'></image>
+      <view class='good-info'>
+        <view class='top'>
+          <text class='.good-name'>{{item.spuName}}</text>
+        </view>
+        <view>
+        <view class='good-original-price'>
+          <text class='good-original'>原价 {{priceIcon}}{{item.skuMarketPrice}}</text>
+        </view>
+        <view class='bottom'>
+          <view class='good-current-price'>
+            <text class='good-price-icon'>会员价 {{priceIcon}}</text>
+            <text class='good-price'>{{item.skuShopPrice}}</text>
+          </view>
+          <image class='good-add' src='../../../images/icons/btn_add.png' data-good-Idx='{{index}}' catchtap='showBuy'></image>
+        </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<!--属性规格选择栏-->
+<view class='mask' style="display:{{chooseModal}}" bindtap='closeBuyWin'></view>
+<view class='mask2' style="display:{{chooseModal}}">
+  <view class='choose'>
+    <view class="spec-img-container">
+      <image src="{{goodInfo.imgUrl}}"></image>
+      <view class='middle'>
+        <view class='name good-name-one'>{{goodInfo.spuName}}</view>
+        <view class="price good-price">{{priceIcon}}{{goodInfo.skuShopPrice}}</view>
+      </view>
+      <icon class="clear" type='clear' catchtap='closeBuyWin'></icon>
+    </view>
+    <!--选择开始 -->
+    <view class="spec-view-container" wx:if="{{goodSpec.length > 0}}">
+      <view class="modal-de-select">商品规格：</view>
+      <view class="modal-spec">
+        <ul>
+          <block wx:for="{{goodSpec}}" wx:key='2'>
+            <li data-spu-Key='{{item.key}}' data-arr-Index='{{index}}' catchtap='selectSpecify'>
+              <view class="modal-spec-item-{{item.isSelect? 'selected':'' }}">{{item.value}}</view>
+            </li>
+          </block>
+        </ul>
+      </view>
+    </view>
+    <!--选择结束 -->
+    <view class="buy-num">
+      <view class="font-num">购买数量：</view>
+
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" data-flag='reduce' bindtap="buyNumRoP">-</text>
+        <!-- 数值 -->
+        <input type="number" bindblur="buyNumChange" value="{{goodInfo.buyNum}}" maxlength='3' />
+        <!-- 加号 -->
+        <text class="normal" data-flag='plus' bindtap="buyNumRoP">+</text>
+      </view>
+
+    </view>
+
+
+    <view class="modal-button-two">
+      <view class="modal-type-{{cartLabType}} global-add-cart" data-sku-Id='{{goodInfo.id}}' bindtap='addShopCart'>加入购物车</view>
+      <view class="modal-type-{{buyLabType}} global-immediate-buy" data-sku-Id='{{goodInfo.id}}' bindtap='immediateBuy'>立即购买</view>
+    </view>
+
+  </view>
+</view>

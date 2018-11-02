@@ -1,0 +1,85 @@
+<view class="cart-box" wx:if='{{cartList.length == 0}}'>
+  <view class="cart-img">
+    <image src="../../../images/icons/ik_cart_empty.png"></image>
+  </view>
+  <view class="cart-emt textGray">购物车空空如也...</view>
+  <navigator open-type="switchTab" url='../index/index' hover-class='none'>
+    <view class="cart-btn textContent">
+      去逛逛
+    </view>
+  </navigator>
+</view>
+
+
+<view wx:elif='{{cartList.length > 0}}'>
+  <!-- 顶部 -->
+  <view class='top-title'>
+    <view class='title-left' bindtap='selectAll'>
+      <view>
+        <icon type="{{allSelected? 'success':'circle'}}" size='23' color="red" class='icon-circle'></icon>
+      </view>
+      <text class='textContent'>全选</text>
+    </view>
+    <view>
+      <text class='textContent' style='margin-right:20rpx;color:#495A7B' bindtap='emptyCart'>清空</text>
+    </view>
+  </view>
+
+  <view wx:for="{{cartList}}" wx:key="list" class="middle-list {{item.delFlag=='1' ? 'touch-move-active' : ''}}" data-idx="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+    <view class='list-good'>
+      <view class='gond-icon' bindtap='selectOne' data-Idx='{{index}}'>
+        <icon type="{{item.isCheck == '1' ? 'success':'circle'}}" size='23' color="red"></icon>
+      </view>
+
+      <view class='good-content' bindtap='goodDetail' data-sku-Id='{{item.skuId}}' data-spu-Id='{{item.spuId}}'>
+        <image class='content-pic' src='{{item.skuPicture}}'></image>
+        <view class='good-content-right'>
+          <view>
+            <text class='content-name good-name-one'>{{item.name}}</text>
+            <text class='content-spu address-content-two'>
+            {{item.propertyValueGroup}}
+            </text>
+          </view>
+          <view>
+            <!-- <view class='title-orginal-price'>￥{{item.skuMarketPrice}}</view> -->
+            <text class='good-price-icon'>￥</text>
+            <text class='good-price'>{{item.price}}</text>
+          </view>
+
+        </view>
+      </view>
+      <view class='number-choose-view'>
+        <text wx:if="{{item.goodsStatusMsg}}" class='public-font-three not-buy-view'>{{item.goodsStatusMsg}}</text>
+        <view>
+          <image src='../../../images/icons/btn_minus@3x.png' catchtap='buyNumRoP' data-flag='reduce' data-idx="{{index}}"></image>
+          <input type='number' value="{{item.goodsCnt}}" maxlength='3' catchblur='buyNumChange' data-idx="{{index}}"></input>
+          <image src='../../../images/icons/btn_cart_add_green@3x.png' catchtap='buyNumRoP' data-flag='plus' data-idx="{{index}}"></image>
+        </view>  
+      </view>
+    </view>
+    <view class="del" catchtap='del' data-idx="{{index}}">
+      删除
+    </view>
+  </view>
+
+  <view>
+    <view class='page-footer-first'></view>
+    <view class="page-footer-second footer-page">
+      <view class='footer-content'>
+        <text class='textGray'>共</text>
+        <text class='textContent' style='color:#f00;'> {{totalNum}} </text>
+        <text class='textGray'>件商品</text>
+
+        <view class='footer-content-activity'>
+          <wxs module="filters" src="../../../filters.wxs"></wxs>
+          <text class='textGray'>总额 ￥{{filters.toFix(totalMoney, 2)}}</text>
+        </view>
+      </view>
+
+      <view class='footer-button'>
+        <view bindtap='addOrder' class="submit-{{totalNum>0? 'can':'not'}} button">去结算</view>
+      </view>
+    </view>
+  </view>
+
+</view>

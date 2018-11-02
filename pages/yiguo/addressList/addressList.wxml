@@ -1,0 +1,43 @@
+<view class='addresslist' wx:for="{{addressList}}" wx:for-item="address" wx:key="index">
+  <view class="contactinfo_box" bindtap="changeSelectedAddress" data-index="{{index}}">
+    <view class="contactinfo">
+      <view class="contactinfo_name">{{address.consigneeName}}</view>
+      <view class="contactinfo_telephone">{{address.consigneePhone}}</view>
+    </view>
+    <view class="address">{{address.addressDatailed}}{{address.doorNumber}}</view>
+  </view>
+  <view class="modify_icon">
+    <view class="defalut_icon_box" wx:if="{{address.isDefault==1}}" wx:key="index">
+      <view class="defalut_icon">
+        <icon type="success" size="21" color="#D32323"></icon>
+      </view>
+      <view class="defalut_icon_text">默认地址</view>
+    </view>
+    <view class="no_defalut" wx:else></view>
+    <view class='edit_icon_box' bindtap="editAddress" data-address="{{address}}">
+      <view class="edit_icon">
+        <image src="/images/icons/ic_edit@3x.png"></image>
+      </view>
+      <view class="edit_icon_text">
+        编辑 
+      </view>
+    </view>
+    <view class='delete_icon_box' bindtap='deleteAddress' data-id="{{address.id}}" data-index="{{index}}">
+      <view class="delete_icon">
+        <image src="/images/icons/ic_del@3x.png"></image>
+      </view>
+      <view class="delete_icon_text">删除</view>
+    </view>
+  </view>
+</view>
+<view class="foot-text">
+</view>
+<view class='page-footer-first'></view>
+
+<navigator class="add_address" url="../addAddress/addAddress">
+  <view class="add-content">
+    <view class="icon-add-50">
+    </view>
+    <view class="add_address_tips">添加新地址</view>
+  </view>
+</navigator>

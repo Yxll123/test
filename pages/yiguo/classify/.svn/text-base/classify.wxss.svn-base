@@ -1,0 +1,48 @@
+.classify-page-view {
+  width: 100%;
+  height: calc(100% - 2rpx);
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  border-top: #eee 2rpx solid;
+}
+
+@import "../../../template/left-classify/left-classify.wxss";
+
+.right-classify {
+  flex: 1;
+  height: 100%;
+}
+
+.classify-goods-view {
+  /* width: 100%; */
+  overflow:auto;
+  padding: 30rpx 20rpx;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.goods-list-view {
+  /* display: flex;
+  flex-direction: row; */
+  width: 100%;
+  
+  overflow:auto;
+}
+
+.goods-view {
+  float: left;
+  width: 33%;
+  text-align: center;
+  margin: 20rpx 0rpx;
+  height: 260rpx;
+}
+
+.goods-imageUrl {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.goods-name {
+  font-size: 24rpx;
+}

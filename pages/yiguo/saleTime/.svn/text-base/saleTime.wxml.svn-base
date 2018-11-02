@@ -1,0 +1,65 @@
+<!--pages/yiguo/saleTime/saleTime.wxml-->
+<swiper id='top' class='swiper-box' autoplay='false'>
+  <swiper-item class='slide-image' src="{{item.imageUrl}}"></swiper-item>
+</swiper>
+
+<view class='activity-view'>
+  <view class='activity-title'>
+    <text class='title-left'>抢购中 先下单先得哦</text>
+    <view class='title-right'>
+      <text class='right-name'>距结束</text>
+      <!-- <view class='right-day'>{{special_day}}</view>: -->
+      <view class='right-hr'>{{h}}</view>:
+      <view class='right-min'>{{m}}</view>:
+      <view class='right-sec'>{{s}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 商品列表 -->
+<view>
+  <block>
+    <!-- 商品模块 -->
+    <view class='good'>
+      <image class='good-img' src=''></image>
+      <view class='good-detail'>
+        <!-- 商品名称 -->
+        <view class='good-detail-title'>
+          尽23日管弄得fq好年让34全球asg青jy骗人
+        </view>
+        <!-- 商品底部 -->
+        <view class='good-foot'>
+          <!-- 商品信息 -->
+          <view class='good-msg'>
+            <!-- 商品价格 -->
+            <view class='title-price'>
+              <view class='sale'>
+                <text class='sale-priceIcon'>￥</text>
+                <text class='sale-price'>242</text>
+              </view>
+              <view class='original'>
+                <text class='original-priceIcon'>￥</text>
+                <text class='original-price'>242</text>
+              </view>
+            </view>
+            <!-- 库存 -->
+            <view class='stock'>
+              <view class='stock-msg'>
+                <text>已售 75%</text>
+              </view>
+              <view class='stock-progress'>
+                <progress percent='75' stroke-width='4' color='#f57a7a' backgroundColor='#fff'/>
+              </view>
+            </view>
+          </view>
+          <!-- 购买 -->
+          <view class='good-buy'>
+            <view class='good-buy-but'>
+              立即购买
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

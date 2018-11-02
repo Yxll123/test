@@ -1,0 +1,73 @@
+<view class="list-tab">
+  <ul>
+    <li class="{{current == 0 ? 'active' : ''}}" catchtap="switchSlider" data-index="0">
+      全部
+    </li>
+    <li class="{{current == 1 ? 'active' : ''}}" catchtap="switchSlider" data-index="1">
+      待付款
+    </li>
+    <li class="{{current == 2 ? 'active' : ''}}" catchtap="switchSlider" data-index="2">
+      待发货
+    </li>
+    <li class="{{current == 3 ? 'active' : ''}}" catchtap="switchSlider" data-index="3">
+      待收货
+    </li>
+    <li class="{{current == 4 ? 'active' : ''}}" catchtap="switchSlider" data-index="4">
+      已完成
+    </li>
+  </ul>
+</view>
+
+<view wx:if="{{listgoods.length >0}}">
+  <view class="orderlist-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
+    <view class="order_firstline">
+      <text class="order_time">下单时间: {{list.createDate}}</text>
+      <text class="order_status" wx:if="{{list.orderStatus==-2}}">待付款</text>
+      <text class="order_status" wx:if="{{list.orderStatus==-1}}">已取消</text>
+      <text class="order_status" wx:if="{{list.orderStatus==0}}">待发货</text>
+      <text class="order_status" wx:if="{{list.orderStatus==1}}">待收货</text>
+      <text class="order_status" wx:if="{{list.orderStatus==2}}">确认收货</text>
+    </view>
+    <view class="goodslist-box" wx:for="{{list.xcxOrderSpuList}}" wx:for-item="goods" wx:key="skuId" bindtap="getOrderDetail" data-id="{{list.id}}">
+      <view class="goods-images">
+        <image src="{{goods.skuImage}}" />
+      </view>
+      <view class="goods-info">
+        <view class="name" >
+          <view class="spuName">{{goods.spuName}}</view>
+          <!-- <view class="skuName">{{goods.skuName}}</view> -->
+        </view>
+        <view class="priceAndAmount">
+          <view class="price">￥{{goods.skuAmt}}</view>
+          <view class="amount">x{{goods.skuCnt}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="orderPrice">
+      <view class="orderPrice_payAmt">合计:￥{{list.payAmt}}</view>
+      <view class="orderPrice_discountAmt" wx:if="{{list.isDiscount}}">已满减:￥{{list.discountAmt}}</view>
+    </view>
+    <view wx:if="{{list.orderStatus==-2}}" class="navigator_operate">
+      <view class="navigator_button1" bindtap="cancelOrder" data-id="{{list.id}}" data-current="{{current}}">
+        取消订单
+      </view>
+      <view class="navigator_button2" bindtap="gotoPay" data-id="{{list.id}}">
+        确认付款
+      </view> 
+    </view>
+    <view wx:elif="{{list.orderStatus==1}}" class="navigator_operate">
+      <view class="navigator_button" bindtap="confirmReceive" data-id="{{list.id}}" data-current="{{current}}">
+        确认收货
+      </view>
+    </view>
+    
+  </view>
+</view>
+<view wx:else>
+  <view class="empty-image">
+    <image src="/images/icons/ik_order_empty.png"></image>
+  </view>
+   <view class="empty-tips">
+    暂无该状态的订单哦
+  </view> 
+</view>

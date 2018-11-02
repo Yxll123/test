@@ -1,0 +1,103 @@
+.drink-shop-top-view {
+  height: 240rpx;
+  width: 100%;
+  background-color: rgba(49, 23, 23, 0.158);
+  display: flex;
+  flex-direction: row;
+}
+
+.drink-shop-image {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 20rpx 20rpx;
+}
+
+.shop-detail-view {
+  margin: 20rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-goods-view {
+  width: 100%;
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-classify {
+  height: 100%;
+  width: 160rpx;
+}
+
+.single-classify {
+  
+  font-size: 30rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 0rpx 20rpx;
+}
+
+.single-classify-none {
+  background-color: rgba(238, 238, 238, 0.39);
+  color: #eee;
+}
+
+.single-classify-slt {
+  background-color: #fff;
+  color: #000;
+}
+
+
+.right-classify {
+  flex: 1;
+  height: 100%;
+}
+
+.classify-goods-view {
+  /* width: 100%; */
+  overflow:auto;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.goods-list-view {
+  /* display: flex;
+  flex-direction: row; */
+  width: 100%;
+  
+  overflow:auto;
+}
+
+.goods-view {
+  width: 100%;
+  margin: 20rpx 0rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.goods-imageUrl {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 10rpx;
+}
+
+.right-goods-view {
+  flex: 1;
+}
+
+.goods-name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.goods-extend-info {
+  font-size: 22rpx;
+  color: #ccc;
+}

@@ -1,0 +1,25 @@
+<import src="../../../template/left-classify/left-classify.wxml" />
+
+<view class='classify-page-view'>
+  <template is="leftClassify" data="{{classify:classify,currentViewIdx:currentViewIdx}}"></template>
+
+  <view class='right-classify'>
+    <scroll-view scroll-y='true' style='height:100%; width:100%;' scroll-into-view="view_{{scrollIntoView}}" scroll-with-animation='true' bindscroll="bindscroll">
+      <block wx:for="{{classify}}" wx:key="f" wx:for-index="fidx">
+        <view class='classify-goods-view' id='view_{{fidx}}'>
+          <block wx:if="{{item.goodsList.length > 0}}">
+            <view class='classify-name'>{{item.name}}</view>
+            <!-- <view class='goods-list-view'> -->
+            <block wx:for="{{item.goodsList}}" wx:key='s' wx:for-index="sidx">
+              <view class='goods-view' catchtap='goodDetail' data-id="{{item.goodsId}}">
+                <image class='goods-imageUrl' src='{{item.pictureUrl}}'></image>
+                <view class='goods-name'>{{item.goodsName}}</view>
+              </view>
+            </block>
+          </block>
+          <!-- </view> -->
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
