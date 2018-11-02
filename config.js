@@ -3,6 +3,11 @@
  */
 var HOST = "http://10.108.86.17:9093";
  //var HOST = "http://10.108.26.144:7080/eskj_service_dsgj/eskj/fzjy";
+
+//var HOST = "http://10.108.86.17:9093";
+ var HOST = "http://10.108.26.144:7080/eskj_service_dsgj/eskj/fzjy";
+ // var HOST = "http://10.108.86.17:9093";
+// var HOST = "http://10.108.26.144:7080/eskj_service_dsgj/eskj/fzjy";
 // var HOST = "http://47.98.46.75:8080/eskj_service_dsgj/eskj/fzjy";
 // var HOST = "http://10.108.26.132:8080/eskj_service_dsgj/eskj/fzjy";
 
