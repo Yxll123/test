@@ -10,8 +10,9 @@
     "pages/yiguo/addAddress/addAddress",
     "pages/yiguo/aboutMe/aboutMe",
     "pages/yiguo/submit/submit",
-    "pages/yiguo/pay/pay",
+    
     "pages/yiguo/vipArea/vipArea",
+    "pages/yiguo/pay/pay",
     "pages/yiguo/invoice/invoice",
     "pages/yiguo/orderDetail/orderDetail",
     "pages/yiguo/classify/classify",
